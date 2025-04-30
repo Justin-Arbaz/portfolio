@@ -1147,8 +1147,7 @@ a:hover {
 }
 
 .contact .info-box .social-links {
-  margin: 5px 0 0 68px;
-  display: flex;
+  margin-top: 10px;
 }
 
 .contact .info-box .social-links a {
