@@ -201,7 +201,7 @@
       <ul>
         <li class="active"><a href="javascript:void(0);" data-filter="*">All</a></li>
         <li><a href="javascript:void(0);" data-filter="HTML CSS & Bootstrap">HTML CSS & Bootstrap</a></li>
-        <li><a href="javascript:void(0);" data-filter="React Designing">React Designing</a></li>
+        <li><a href="javascript:void(0);" data-filter="React Designing">React JS & Next JS</a></li>
         <li><a href="javascript:void(0);" data-filter="Wordpress">Wordpress</a></li>
       </ul>
     </div>
@@ -215,10 +215,16 @@
       </div>
 
       <div class="grid-item" data-filter="React Designing">
-        <a class="popupimg" href="./Outlook.html">
-          <img src="./assets/img/Outlook.png">
+        <a class="popupimg" href="./Talentxcel.html">
+          <img src="./assets/img/talentxcel/2.png">
         </a>
-        <div class="overlay">React Designing</div>
+        <div class="overlay">Next JS</div>
+      </div>
+      <div class="grid-item" data-filter="React Designing">
+        <a class="popupimg" href="./Beauty-icon.html">
+          <img src="./assets/img/Beauty-icon img/1.png">
+        </a>
+        <div class="overlay">React JS </div>
       </div>
 
 
@@ -237,15 +243,16 @@
       </div>
 
       <div class="grid-item" data-filter="Wordpress">
-        <a class="popupimg" href="./Education.html">
-          <img src="./assets/img/education.png">
+        <a class="popupimg" href="./kaasahomes.html">
+          <img src="./assets/img/kaasahomes img/1.png">
         </a>
         <div class="overlay">Wordpress</div>
       </div>
+     
 
       <div class="grid-item" data-filter="Wordpress">
-        <a class="popupimg" href="./KtenasLaw.html">
-          <img src="./assets/img/ktenaslaw.png">
+        <a class="popupimg" href="Lalaji.html">
+          <img src="./assets/img/Lalaji img/1.png">
         </a>
         <div class="overlay">Wordpress</div>
       </div>
@@ -315,14 +322,14 @@
 
                     <div class="col-md-6 mt-4 d-flex align-items-stretch">
                       <div class="info-box">
-                        <a href="justinarbaz442@gmail.com"><i class="bi bi-envelope"></i></a>
+                        <a href="mailto:justinarbaz442@gmail.com"><i class="bi bi-envelope"></i></a>
                         <h3>Email Me</h3>
                         <p>justinarbaz442@gmail.com</p>
                       </div>
                     </div>
                     <div class="col-md-6 mt-4 d-flex align-items-stretch">
                       <div class="info-box">
-                        <a href=""><i class="bi bi-telephone"></i> </a>
+                        <a href="tel:+919801753451"><i class="bi bi-telephone"></i> </a>
                         <h3>Call Me</h3>
                         <p>+91 9801753451</p>
                       </div>
@@ -334,7 +341,7 @@
 
                     </div>
                     <div>
-                      <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                      <form id="contact-form" action="forms/contact.php" method="post" role="form" class="php-email-form">
                         <div class="row">
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
@@ -361,12 +368,12 @@
                             </div>
                           </div>
                           <div class="col-md-12 text-center my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                            <div id="loading" style="display: none;">Loading...</div>
+                            <div id="error-message" style="display: none; color: red;">There was an error submitting the form. Please try again.</div>
+                            <div id="sent-message" style="display: none; color: green;">Your message has been sent. Thank you!</div>
                           </div>
                           <div class="col-md-12 text-center">
-                            <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
+                            <button type="button" id="submit-button" class="button button-a button-big button-rouded">Send Message</button>
                           </div>
                         </div>
                       </form>
@@ -378,7 +385,32 @@
           </div>
         </div>
       </div>
-    </section><!-- End Contact Section -->
+
+      <script>
+        document.getElementById('submit-button').addEventListener('click', function() {
+          const loading = document.getElementById('loading');
+          const sentMessage = document.getElementById('sent-message');
+          const errorMessage = document.getElementById('error-message');
+
+          // Simulate form submission
+          loading.style.display = 'block';
+          sentMessage.style.display = 'none';
+          errorMessage.style.display = 'none';
+
+          setTimeout(() => {
+            loading.style.display = 'none';
+            const isSuccess = Math.random() > 0.2; // Simulate success rate
+
+            if (isSuccess) {
+              sentMessage.style.display = 'block';
+            } else {
+              errorMessage.style.display = 'block';
+            }
+          }, 2000);
+        });
+      </script>
+    </section>
+<!-- End Contact Section -->
 
   </main><!-- End #main -->
 
@@ -390,7 +422,7 @@
           <div class="copyright-box">
             <p class="copyright">&copy; Copyright <strong>DevFolio</strong>. All Rights Reserved</p>
             <div class="credits">
-              Designed by <a href="https://bootstrapmade.com/">Md Arbaz</a>
+              Designed by <p>Md Arbaz</p>
             </div>
           </div>
         </div>
